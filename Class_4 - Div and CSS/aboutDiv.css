@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+#box1 {
+  background-color: lightseagreen;
+}
+
+#box2 {
+  background-color: pink;
+}
+
+#box3 {
+  background-color: rgb(97, 255, 97);
+}
