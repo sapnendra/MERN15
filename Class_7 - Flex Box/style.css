@@ -1,0 +1,31 @@
+@font-face {
+    font-family: poppins;
+    src: url(./Poppins-Medium.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans Unicode';
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-bottom: 1px solid gray;
+    font-family: poppins;
+}
+
+h4 {
+    font-size: 17px;
+    font-weight: 600;
+}
