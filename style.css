@@ -1,19 +1,10 @@
-@font-face {
-    font-family: mozila;
-    src: url(./MozillaHeadline-VariableFont_wdth\,wght.ttf);
-}
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans Unicode';
-}
-html , body{
-    height: 100%;
-    width: 100%;
 }
 
-h1 {
-    font-family: mozila;
+html, body {
+    height: 100%;
+    width: 100%;
 }
