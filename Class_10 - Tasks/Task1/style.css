@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+    padding: 30px 100px;
+}
+
+.navbar {
+    height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h1 {
+    font-size: 20px;
+}
+
+.navbar h4 {
+    font-weight: 400;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+#mail {
+    background-color: #e8e8e8;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
