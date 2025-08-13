@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Task 1 After Learning Flexbox - 13th August",
+    "description": "A single-page website using HTML, CSS that showcase my flexbox understanding",
+    "techStack": ["HTML", "CSS"],
+    "image": "images/project1.png",
+    "demoLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "Task 2 After Learning Flexbox - 13th August",
+    "description": "A single-page website using HTML, CSS that showcase my flexbox understanding",
+    "techStack": ["HTML", "CSS"],
+    "image": "images/project1.png",
+    "demoLink": "#",
+    "codeLink": "#"
+  },
+  {
+    "title": "Task 1 After Learning Flexbox",
+    "description": "A single-page website using HTML, CSS that showcase my flexbox understanding",
+    "techStack": ["HTML", "CSS"],
+    "image": "images/project1.png",
+    "demoLink": "#",
+    "codeLink": "#"
+  }
+]
