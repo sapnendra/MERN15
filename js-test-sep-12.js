@@ -82,12 +82,6 @@
 // let students = [
 //   { name: "Aman", marks: 70 },
 //   { name: "Riya", marks: 45 },
-//   { name: "Kabir", marks: 85 }
-// ];
-
-// let students = [
-//   { name: "Aman", marks: 70 },
-//   { name: "Riya", marks: 45 },
 //   { name: "Kabir", marks: 85 },
 // ];
 // let total = 0;
