@@ -1,6 +1,10 @@
-const h1 = document.querySelector("h1")
-h1.addEventListener("click", () => {
-    h1.innerHTML = `I'm Sapnendra`;
-    h1.style.color = "red";
-    h1.style.backgroundColor = "yellow";
-})
+const h1 = document.querySelector("#name span");
+const h2 = document.querySelector("#age span");
+const h3 = document.querySelector("#color span");
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", () => {
+  h1.innerHTML = "Sapnendra";
+  h2.innerHTML = "22";
+  h3.innerHTML = "Green";
+});
