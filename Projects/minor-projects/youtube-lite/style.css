@@ -1,0 +1,7 @@
+.hideScrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.animate {
+    transition: all 0.3s ease-out;
+}
