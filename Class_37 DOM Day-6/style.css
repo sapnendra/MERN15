@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+img {
+  height: 300px;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 8;
+}
+
+button {
+  position: absolute;
+  z-index: 9;
+  cursor: pointer;
+  padding: 20px 35px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  color: white;
+  background-color: rgb(134, 52, 52);
+}
+
+h1 {
+  font-size: 60px;
+  color: red;
+}

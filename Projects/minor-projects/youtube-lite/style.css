@@ -5,3 +5,7 @@
 .animate {
     transition: all 0.3s ease-out;
 }
+
+.search input:focus {
+    outline: none;
+}
