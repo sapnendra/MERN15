@@ -6,9 +6,7 @@ const getRandom = (min, max) => {
 const menu = document.querySelector(".menu");
 const right = document.querySelector(".right");
 const h4 = document.querySelector("h4");
-
 let flag = 0;
-
 menu.addEventListener("click", () => {
     if(flag === 0) {
         right.style.right = "0%";
