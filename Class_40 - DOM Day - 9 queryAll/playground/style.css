@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 20px;
+}
+
+img {
+  height: 150px;
+  transition: scale 0.1s ease-out;
+}
+
+img:active {
+  scale: 0.9;
+}
+
+.characters {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.playground {
+  margin-top: 25px;
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  border: 5px solid black;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.playground img {
+  position: absolute;
+}
