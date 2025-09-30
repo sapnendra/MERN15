@@ -1,3 +1,6 @@
+@import "button";
+@import "header";
+
 * {
   margin: 0;
   padding: 0;
@@ -8,22 +11,40 @@ html,
 body {
   height: 100%;
   width: 100%;
-  padding: 30px;
+    
 }
 
-main {
-  h1 {
-    font-size: 80px;
-    color: red;
-  }
+body {
+  @include flex-center();
+  padding: 30px;
+  flex-direction: column;
+}
 
-  button {
-    padding: 20px 50px;
-    border-radius: 8px;
-    border: none;
-    background-color: rgb(0, 0, 0);
-    font-size: 25px;
-    color: white;
-    cursor: pointer;
-  }
+.red {
+  height: 400px;
+  width: 400px;
+  background-color: red;
+
+  @include flex-center();
+}
+
+.green {
+  height: 300px;
+  width: 300px;
+  background-color: green;
+  @include flex-center();
+}
+
+.black {
+  height: 200px;
+  width: 200px;
+  background-color: black;
+}
+
+.exp {
+  @include button-style();
+}
+
+.learn {
+  @include button-style(rgb(255, 153, 0));
 }

@@ -1,3 +1,6 @@
 SCSS Feature - 
-    1. Nesting
-    2. Modularity
+    1. Nesting - 
+    2. Modularity - 
+    3. Mixin - Reduce the repotative task.
+             - Create dynamic color, by pasing arguments to the @mixin button-style() {}
+    4. Partials - Use by importing mixin files - @import "button".
