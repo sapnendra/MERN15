@@ -54,36 +54,32 @@ const users = [
   },
 ];
 
-let clutter = "";
-users.forEach((user, idx) => {
-  clutter += `<div class="card">
+const makeCard = () => {
+  let clutter = "";
+  users.forEach((user, idx) => {
+    clutter += `<div class="card">
         <img src=${user.image} />
         <h1>${user.fullName}</h1>
-        <h3 class=${user.status}>${user.status}</h3>
+        <h3 id=status-${idx} class=${user.status}>${user.status}</h3>
         <button id=${idx}>${user.buttonText}</button>
     </div>`;
-});
+  });
 
-document.querySelector(".cards").innerHTML = clutter;
+  document.querySelector(".cards").innerHTML = clutter;
+};
+makeCard();
 
 const addRemove = () => {
   document.querySelector(".cards").addEventListener("click", (dets) => {
     let temp = users[dets.target.id];
-    console.log(temp);
+    if(temp.status === "Stranger") {
+      temp.status = "Friend";
+      temp.buttonText = "Remove friend"
+    } else {
+      temp.status = "Stranger"
+      temp.buttonText = "Add friend"
+    }
+    makeCard();
   });
 };
 addRemove();
-// let flag = 1;
-// btn.addEventListener("click", () => {
-//   if (flag === 0) {
-//     h3.textContent = "Friends";
-//     h3.style.color = "green";
-//     btn.textContent = "Remove friend";
-//     flag = 1;
-//   } else {
-//     h3.textContent = "Stranger";
-//     h3.style.color = "red";
-//     btn.textContent = "Add friend";
-//     flag = 0;
-//   }
-// });
