@@ -1,81 +1,36 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+input {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 button {
-    width: fit-content;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+ul {
+  font-size: 30px;
+  padding: 30px;
 }
 
-button.dark {
-    background-color: #333;
-    color: white;
+#user {
+  color: green;
 }
 
-.blog-post {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  padding: 1.5rem;
-}
-
-#javascript-blog {
-  margin-bottom: 0;
-}
-
-.blog-post h2 {
-  color: #007bff;
-  margin-top: 0;
-}
-
-.blog-post p {
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #333;
-  color: white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-footer a {
-  color: #58a9ff;
-}
-footer a:hover {
-  text-decoration: underline;
+#email {
+  color: red;
 }

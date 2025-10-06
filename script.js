@@ -1,38 +1,36 @@
-const darkBtn = document.querySelector("button.dark");
-const lightBtn = document.querySelector("button.light");
-const main = document.querySelector("main");
-const h2 = document.querySelectorAll("h2");
-const p = document.querySelectorAll("p");
-const htmlCard = document.querySelector("#html-blog");
-const cssCard = document.querySelector("#css-blog");
-const jsCard = document.querySelector("#javascript-blog");
+const form = document.querySelector("form");
+const username = document.querySelector("#username");
+const email = document.querySelector("#userEmail")
+const btn = document.querySelector("button");
 
-darkBtn.addEventListener("click", () => {
-  document.body.style.backgroundColor = "#222";
-  lightBtn.style.backgroundColor = "#bebebeff";
-  lightBtn.style.color = "#000";
-  htmlCard.style.backgroundColor = "#333";
-  cssCard.style.backgroundColor = "#333";
-  jsCard.style.backgroundColor = "#333";
-  h2.forEach((element) => {
-    element.style.color = "#fff";
-  });
-  p.forEach((element) => {
-    element.style.color = "#fff";
-  });
+let users = [];
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let user = {
+    username: username.value,
+    email: email.value,
+  }
+
+  users.push(user);
+
+  makeUser();
+
+  username.value = "";
+  email.value = "";
+  
 });
 
-lightBtn.addEventListener("click", () => {
-  document.body.style.backgroundColor = "";
-  htmlCard.style.backgroundColor = "#fff";
-  cssCard.style.backgroundColor = "#fff";
-  jsCard.style.backgroundColor = "#fff";
-  h2.forEach((element) => {
-    element.style.color = "#000";
-  });
-  p.forEach((element) => {
-    element.style.color = "#000";
-  });
-  lightBtn.style.backgroundColor = "";
-  lightBtn.style.color = "";
-});
+const makeUser = () => {
+  let clutter = "";
+  users.forEach((item) => {
+    clutter += `<li>
+      <span id="user">${item.username}</span>
+      <span id="email">${item.email}</span>
+    </li>`
+  })
+
+  document.querySelector("ul").innerHTML = clutter;
+}
+makeUser();
+
