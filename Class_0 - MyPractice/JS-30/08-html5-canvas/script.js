@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>HTML5 Canvas</title>
-  <link rel="icon" href="https://fav.farm/✅" />
-</head>
-<body>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -57,18 +47,6 @@ canvas.addEventListener('mousedown', (e) => {
   [lastX, lastY] = [e.offsetX, e.offsetY];
 });
 
-
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
-
-</script>
-
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
-
-</body>
-</html>
