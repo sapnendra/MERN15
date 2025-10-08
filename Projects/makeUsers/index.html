@@ -8,38 +8,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="">
-    <div class="flex items-center flex-col justify-center gap-30 px-10 p-10">
-      <div class="search-create-box w-full flex items-center justify-around">
-        <div
-          class="flex items-center gap-2 font-bold border-3 px-5 py-1 rounded-lg"
-        >
-          <span class="text-2xl">Create Your Card</span
-          ><button
-            id="create-card"
-            class="h-10 w-10 rounded-[50%] outline-none bg-blue-500 text-[#fff] text-4xl font-bold cursor-pointer"
-          >
-            +
-          </button>
-        </div>
-      </div>
-
+    <div class="flex items-center flex-col justify-center gap-10 p-5">
       <form
-        class="userForm border-2 px-5 py-8 flex flex-col items-center justify-between gap-3 h-100 w-80 rounded-xl hidden"
+        class="userForm border-2 px-2 py-4 flex flex-col items-center justify-between gap-1 h-70 w-90 rounded-xl"
         autocomplete="off"
       >
         <input
-          class="w-full border border-gray-300 px-2 py-2 rounded focus:outline-none cursor-pointer"
+          class="w-full border border-gray-300 px-2 py-2 rounded focus:outline-none"
           type="text"
           name="pic"
           id="pic"
-          placeholder="Paste your image URL here..."
+          placeholder="Enter image URL"
           required
         />
         <input
           class="w-full border border-gray-300 px-2 py-2 rounded focus:outline-none"
           type="text"
           name="username"
-          placeholder="Enter your name..."
+          placeholder="Enter your name"
           required
         />
         <input
@@ -47,7 +33,7 @@
           type="text"
           name="bio"
           maxlength="50"
-          placeholder="Enter bio..."
+          placeholder="Enter your bio"
           required
         />
         <div class="flex flex-col gap-2 w-full">
@@ -56,16 +42,11 @@
             type="submit"
             value="Create Card"
           />
-          <button
-            class="closeForm border border-gray-300 px-10 py-2 rounded bg-red-600 text-[#fff] font-bold cursor-pointer"
-          >
-            Close Form
-          </button>
         </div>
       </form>
 
       <div
-        class="card-container flex flex-wrap items-center justify-center gap-10"
+        class="card-container flex flex-wrap items-start gap-10 border-t-2 pt-10 min-h-[58vh] w-full p-2"
       ></div>
     </div>
 

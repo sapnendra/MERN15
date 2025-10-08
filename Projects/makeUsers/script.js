@@ -1,105 +1,80 @@
-let users = [];
+let users = [
+  {
+    username: "Sapnendra Jaiswal",
+    pic: "https://images.unsplash.com/photo-1632094623683-9d0bf4819c89?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bio: "I am a Software Developer and Designer",
+  },
+  {
+    username: "I don't know",
+    pic: "https://images.unsplash.com/photo-1758634832507-72a43d0f8656?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bio: "I am a body builder and gym trainer",
+  },
+];
 
 // Display users on page load
-let showUsers = (users) => {
-  const cardContainer = document.querySelector(".card-container");
-  cardContainer.innerHTML = "";
-
-  if (users) {
-    users.forEach((user, idx) => {
-      const card = document.createElement("div");
-      card.className =
-        "card h-120 w-100 bg-gray-200 rounded-2xl overflow-hidden relative";
-      const img = document.createElement("img");
-      img.className = "absolute";
-      img.src = user.pic;
-
-      const blurredLayer = document.createElement("div");
-      blurredLayer.className = "blurred-layer absolute";
-
-      const content = document.createElement("div");
-      content.className =
-        "content text-center text-[#fff] absolute bottom-2 w-full px-1 py-0";
-
-      const name = document.createElement("h2");
-      name.className = "text-4xl font-bold mb-2";
-      name.textContent = user.name;
-
-      const desc = document.createElement("p");
-      desc.className = "text-xl";
-      desc.textContent = user.bio;
-
-      const btn = document.querySelector("button");
-      btn.className = "h-10 px-5 py-2 mt-1 text-xl rounded bg-red-500";
-      btn.id = idx;
-      btn.textContent = "Delete";
-
-      content.appendChild(name);
-      content.appendChild(desc);
-      content.appendChild(btn);
-
-      card.appendChild(img);
-      card.appendChild(blurredLayer);
-      card.appendChild(content);
-
-      // You can now append `card` to the desired parent in your document. For example:
-      document.querySelector(".card-container").appendChild(card);
-    });
-  }
+const showUsers = () => {
+  let clutter = "";
+  users.forEach((user, idx) => {
+    clutter += `<div
+          class="card h-100 w-80 bg-gray-200 rounded-2xl overflow-hidden relative"
+        >
+          <img
+            class="absolute"
+            src="${user.pic}"
+          />
+          <div class="blurred-layer absolute"></div>
+          <div
+            class="content text-center text-[#fff] absolute bottom-2 w-full px-2 py-0"
+          >
+            <h2 class="text-3xl font-bold mb-2">${user.username}</h2>
+            <p class="text-xl">${user.bio}</p>
+            <button
+              class="h-10 px-5 py-2 mt-1 text-xl rounded bg-red-500"
+              id="${idx}"
+            >
+              Delete
+            </button>
+          </div>
+        </div>`;
+  });
+  document.querySelector(".card-container").innerHTML = clutter;
 };
-showUsers(users);
+showUsers();
 
 // Add new user functionality
 const createNewUser = () => {
-  const createBtn = document.querySelector("#create-card");
-  const closeForm = document.querySelector(".closeForm");
-  const cardContainer = document.querySelector(".card-container");
   const userForm = document.querySelector(".userForm");
-
-  createBtn.addEventListener("click", () => {
-    userForm.classList.remove("hidden");
-    cardContainer.classList.add("hidden");
-  });
-
-  closeForm.addEventListener("click", () => {
-    userForm.classList.add("hidden");
-    cardContainer.classList.remove("hidden");
-  });
-
   userForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = userForm.username.value;
+    const username = userForm.username.value;
     const bio = userForm.bio.value;
     const pic = userForm.pic.value;
 
-    if (!name || !bio) {
+    if (!username || !bio) {
       alert("All fields are required!");
       return;
     }
 
-    if (pic) {
-      const newUser = {
-        name,
-        pic,
-        bio,
-      };
-      users.push(newUser);
-      showUsers(users);
-      userForm.reset();
-      userForm.classList.add("hidden");
-      cardContainer.classList.remove("hidden");
-    }
+    const newUser = {
+      username,
+      pic,
+      bio,
+    };
+
+    users.push(newUser);
+    userForm.reset();
+    showUsers();
   });
 };
+createNewUser();
 
 const deleteUser = () => {
   const cards = document.querySelector(".card-container");
   cards.addEventListener("click", (dets) => {
     let idx = dets.target.id;
+    if (!idx) return;
     users.splice(idx, 1);
-    showUsers(users);
+    showUsers();
   });
 };
 deleteUser();
-
-createNewUser();
