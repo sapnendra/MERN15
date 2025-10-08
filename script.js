@@ -1,36 +1,14 @@
-const form = document.querySelector("form");
-const username = document.querySelector("#username");
-const email = document.querySelector("#userEmail")
-const btn = document.querySelector("button");
-
-let users = [];
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let user = {
-    username: username.value,
-    email: email.value,
+let count = 0;
+let second = 5;
+let progress = document.querySelector(".progress-bar-fill");
+let percentText = document.querySelector(".progress-label");
+let interval = setInterval(() => {
+  if (count < 100) {
+    count++;
+    progress.style.width = `${count}%`;
+    percentText.textContent = `${count}%`;
+  } else {
+    document.querySelector(".morphism-title").textContent = "Download complete!";
+    clearInterval(interval);
   }
-
-  users.push(user);
-
-  makeUser();
-
-  username.value = "";
-  email.value = "";
-  
-});
-
-const makeUser = () => {
-  let clutter = "";
-  users.forEach((item) => {
-    clutter += `<li>
-      <span id="user">${item.username}</span>
-      <span id="email">${item.email}</span>
-    </li>`
-  })
-
-  document.querySelector("ul").innerHTML = clutter;
-}
-makeUser();
-
+}, (second * 1000) / 100);

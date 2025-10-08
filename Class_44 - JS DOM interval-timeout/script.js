@@ -1,12 +1,21 @@
-const btn = document.querySelector("button");
+const h5 = document.querySelector("h5");
 const h3 = document.querySelector("h3");
+const inner = document.querySelector(".inner");
+const btn = document.querySelector("button");
+
+h5.style.display = "none";
 
 btn.addEventListener("click", () => {
-    h3.textContent = "Sending..."
-    h3.style.color = "yellow"
+  btn.disabled = true;
+  let grow = 0;
+  let inter = setInterval(() => {
+    grow++;
+    h3.textContent = grow + "%";
+    inner.style.width = `${grow}%`;
+  }, 30);
 
-    setTimeout(() => {
-        h3.textContent = "Friend"
-        h3.style.color = "green"
-    }, 3000);
-})
+  setTimeout(() => {
+    h5.style.display = "block";
+    clearInterval(inter);
+  }, 3000);
+});
