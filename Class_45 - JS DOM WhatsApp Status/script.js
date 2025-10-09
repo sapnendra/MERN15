@@ -55,38 +55,54 @@ const allStatus = document.querySelector(".allStatus");
 const full = document.querySelector("#full");
 const inner = document.querySelector(".inner");
 const outer = document.querySelector(".outer");
+const card = document.querySelector(".card");
+const statusDetsImg = document.querySelector(".details img");
+const statusDetsName = document.querySelector(".details h3");
+const statusDetsTime = document.querySelector(".details h5");
 
 let clutter = "";
 userStatus.forEach((item, idx) => {
   clutter += `<div id="${idx}" class="status">
                 <img src="${item.image}">
                 <h3>${item.fullName}</h3>
-            </div>`;
+              </div>`;
 });
 
 allStatus.innerHTML = clutter;
 
-allStatus.addEventListener("click", (dets) => {
-  let img = userStatus[dets.target.id].image;
-  full.style.backgroundImage = `url(${img})`;
-  full.style.display = "block";
-  setTimeout(() => {
-    full.style.display = "none";
-  }, 2000);
-//   let grow = 0;
-//   let inter = setInterval(() => {
-//     grow++;
-//     h3.textContent = "Downloading... " + grow + "%";
-//     h3.style.color = "rgb(255, 166, 0)";
-//     inner.style.width = `${grow}%`;
-//   }, 50);
+let currentIdx = 0;
+function showStatus(idx) {
+  if (idx < 0 || idx >= userStatus.length) return;
 
-//   setTimeout(() => {
-//     btn.disabled = false;
-//     h3.textContent = "Download Completed";
-//     h3.style.color = "green";
-//     inner.style.width = `0%`;
-//     outer.style.display = "none";
-//     clearInterval(inter);
-//   }, 5000);
+  let status = userStatus[idx];
+  full.style.backgroundImage = `url(${status.image})`;
+  statusDetsImg.src = status.image;
+  statusDetsName.textContent = status.fullName;
+
+  let date = new Date();
+  let time = `${date.getHours()}:${date.getMinutes()}:${
+    date.getSeconds() < 9 ? 0 + date.getSeconds() : date.getSeconds()
+  }`;
+  statusDetsTime.textContent = time;
+
+  let grow = 0;
+  inner.style.width = "0%";
+  full.style.display = "block";
+  let inter = setInterval(() => {
+    grow++;
+    inner.style.width = `${grow}%`;
+  }, 30);
+  setTimeout(() => {
+    clearInterval(inter);
+    full.style.display = "none";
+    inner.style.width = "0%";
+    if (idx + 1 < userStatus.length) {
+      showStatus(idx + 1);
+    }
+  }, 3000);
+}
+
+allStatus.addEventListener("click", function (event) {
+  let idx = Number(event.target.id); // Must make sure each status element has its id set to the index
+  showStatus(idx);
 });
