@@ -2,6 +2,7 @@ const h5 = document.querySelector("h5");
 const h3 = document.querySelector("h3");
 const btn = document.querySelector("button");
 const inner = document.querySelector(".inner");
+const outer = document.querySelector(".outer")
 
 btn.addEventListener("click", () => {
   btn.disabled = true;
@@ -25,6 +26,8 @@ btn.addEventListener("click", () => {
       btn.disabled = false;
       h3.textContent = "Download Completed";
       h3.style.color = "green";
+      inner.style.width = `0%`;
+      outer.style.display = "none"
       clearInterval(inter);
     }, 5000);
   }, 3000);
