@@ -15,9 +15,9 @@ body {
 }
 
 .card {
-  height: 200px;
+  height: 150px;
   width: 350px;
-  background-color: white;
+  background-color: rgb(230, 230, 230);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -40,6 +40,10 @@ body {
   width: 0%;
   border-radius: 50px;
   background-color: green;
+}
+
+h3 {
+  color: rgb(81, 92, 92);
 }
 
 h5 {
