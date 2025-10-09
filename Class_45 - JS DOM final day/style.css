@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card {
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: auto;
+    position: relative;
+}
+
+.card::-webkit-scrollbar {
+    display: none;
+}
+
+.card h2 {
+    height: 70px;
+    font-size: 40px;
+    padding: 10px;
+    color: rgb(0, 114, 0);
+    text-align: center;
+}
+
+.allStatus {
+    height: 88%;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-top: 1px solid #000;
+}
+.status img {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgb(0, 169, 0);
+    pointer-events: none;
+}
+
+.status h3 {
+    font-size: 20px;
+    color: rgb(77, 77, 77);
+    pointer-events: none;
+}
+
+#full {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(157, 81, 81, 0.73);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    display: none;
+}
+
+.outer {
+    height: 6px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgb(195, 195, 195);
+}
+.inner {
+    height: 100%;
+    width: 50%;
+    background-color: rgb(6, 198, 6);
+    border-radius: 10px;
+}
