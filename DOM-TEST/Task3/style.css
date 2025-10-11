@@ -23,18 +23,22 @@ body {
 }
 
 .sentance {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 input {
-    font-size: 30px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
+  font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+input::placeholder {
+  font-size: 22px;
 }
 
 #time {
-    color: #fff;
-    font-size: 40px;
-    color: red;
+  color: #fff;
+  font-size: 40px;
+  color: red;
 }
