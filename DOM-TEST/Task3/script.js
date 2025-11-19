@@ -37,7 +37,6 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let userInp = inp.value;
 
-  console.log("Hello");
   if (userInp === sentance) {
     clearInterval(inter);
     span.textContent = `You have taken ${timer} second.`;
